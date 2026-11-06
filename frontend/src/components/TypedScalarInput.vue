@@ -1,0 +1,8 @@
+<script setup lang="ts">
+import type { TypedScalar } from '../types'
+const props = defineProps<{ modelValue?: TypedScalar; label?: string }>()
+const emit = defineEmits<{ 'update:modelValue': [value: TypedScalar] }>()
+function kind(type: TypedScalar['type']) { emit('update:modelValue', { type, value: type === 'null' ? null : type === 'boolean' ? true : type === 'integer' || type === 'decimal' ? '0' : '', ...(type === 'decimal' ? { scale: 2 } : {}) }) }
+function value(value: string | boolean) { emit('update:modelValue', { ...(props.modelValue || { type: 'string' }), value } as TypedScalar) }
+</script>
+<template><div class="scalar-input"><el-select :model-value="modelValue?.type || 'string'" :aria-label="`${label || '常量'}类型`" class="scalar-kind" @update:model-value="kind"><el-option value="string" label="文本" /><el-option value="integer" label="整数" /><el-option value="decimal" label="精确小数" /><el-option value="boolean" label="布尔" /><el-option value="datetime" label="日期时间" /><el-option value="null" label="空值" /></el-select><el-select v-if="modelValue?.type === 'boolean'" :model-value="modelValue.value" @update:model-value="value"><el-option :value="true" label="true" /><el-option :value="false" label="false" /></el-select><span v-else-if="modelValue?.type === 'null'">null</span><el-input v-else :model-value="String(modelValue?.value ?? '')" :aria-label="label || '类型化值'" placeholder="小数与整数保留字符串精度" @update:model-value="value" /><el-input-number v-if="modelValue?.type === 'decimal'" :model-value="modelValue.scale ?? 2" :min="0" :max="12" :precision="0" :controls="false" aria-label="常量小数位" @update:model-value="emit('update:modelValue', { ...modelValue, scale: $event ?? 2 })" /></div></template>

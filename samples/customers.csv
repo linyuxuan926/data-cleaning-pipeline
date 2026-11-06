@@ -1,0 +1,7 @@
+id,name,email,age,city
+1, Alice ,ALICE@example.com,28,Shanghai
+2,Bob,bob@example.com,35,
+2,Bob duplicate,bob2@example.com,35,Beijing
+3,Carol,invalid-email,42,Shenzhen
+4,Dave,dave@example.com,210,Hangzhou
+5,Eve,eve@example.com,27,Chengdu

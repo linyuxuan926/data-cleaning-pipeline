@@ -1,0 +1,179 @@
+{
+  "reportSchemaVersion": 3,
+  "designExample": true,
+  "taskId": "a5ad3adc-ecb6-40b8-8903-98233c75a994",
+  "attemptId": "2df53c82-abeb-4219-8fe9-7cd75fd47d01",
+  "attemptNo": 1,
+  "engineVersion": "v3-sequential",
+  "executionOrder": [
+    "r01-trim",
+    "r02-cast-amount",
+    "r03-fill-mean",
+    "r04-range",
+    "r05-cast-dates",
+    "r06-dates-order",
+    "r07-enum",
+    "r08-dedup"
+  ],
+  "timing": {
+    "startedAt": null,
+    "finishedAt": null,
+    "durationMs": null,
+    "reason": "DESIGN_EXAMPLE_NOT_EXECUTED"
+  },
+  "metrics": {
+    "inputRows": 8,
+    "outputRows": 4,
+    "validOutputRows": 3,
+    "flaggedOutputRows": 1,
+    "finalRemovedRows": 4,
+    "issueRows": 5,
+    "issueCount": 5,
+    "duplicateRemovedRows": 1,
+    "outlierHandledRows": 1,
+    "missingFilledCells": 1,
+    "typeConversionFailedCells": 1,
+    "changedCells": 22
+  },
+  "finalDispositionCounts": {
+    "OUTPUT_VALID": 3,
+    "OUTPUT_FLAGGED": 1,
+    "REMOVED_TYPE_CONVERSION_FAILED": 1,
+    "REMOVED_OUT_OF_RANGE": 1,
+    "REMOVED_FIELD_COMPARISON_FAILED": 1,
+    "REMOVED_DUPLICATE": 1
+  },
+  "finalRemovalByRule": {
+    "r02-cast-amount": 1,
+    "r04-range": 1,
+    "r06-dates-order": 1,
+    "r08-dedup": 1
+  },
+  "rules": [
+    {
+      "ruleId": "r01-trim",
+      "inputRows": 8,
+      "outputRows": 8,
+      "hitRows": 3,
+      "issueCount": 0,
+      "changedCells": 3,
+      "removedRows": 0,
+      "markedRows": 0,
+      "index": 1,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r02-cast-amount",
+      "inputRows": 8,
+      "outputRows": 7,
+      "hitRows": 7,
+      "issueCount": 1,
+      "changedCells": 6,
+      "removedRows": 1,
+      "markedRows": 0,
+      "index": 2,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r03-fill-mean",
+      "inputRows": 7,
+      "outputRows": 7,
+      "hitRows": 1,
+      "issueCount": 0,
+      "changedCells": 1,
+      "removedRows": 0,
+      "markedRows": 0,
+      "statistics": {
+        "validValueCount": 6,
+        "missingValueCount": 1,
+        "excludedInvalidValueCount": 0,
+        "sum": "1112.00",
+        "unroundedMean": {
+          "numerator": "1112",
+          "denominator": 6
+        },
+        "fillValue": "185.33",
+        "scale": 2,
+        "rounding": "HALF_UP"
+      },
+      "index": 3,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r04-range",
+      "inputRows": 7,
+      "outputRows": 6,
+      "hitRows": 1,
+      "issueCount": 1,
+      "changedCells": 0,
+      "removedRows": 1,
+      "markedRows": 0,
+      "index": 4,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r05-cast-dates",
+      "inputRows": 6,
+      "outputRows": 6,
+      "hitRows": 6,
+      "issueCount": 0,
+      "changedCells": 12,
+      "removedRows": 0,
+      "markedRows": 0,
+      "index": 5,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r06-dates-order",
+      "inputRows": 6,
+      "outputRows": 5,
+      "hitRows": 1,
+      "issueCount": 1,
+      "changedCells": 0,
+      "removedRows": 1,
+      "markedRows": 0,
+      "index": 6,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r07-enum",
+      "inputRows": 5,
+      "outputRows": 5,
+      "hitRows": 1,
+      "issueCount": 1,
+      "changedCells": 0,
+      "removedRows": 0,
+      "markedRows": 1,
+      "index": 7,
+      "status": "EXPECTED",
+      "durationMs": null
+    },
+    {
+      "ruleId": "r08-dedup",
+      "inputRows": 5,
+      "outputRows": 4,
+      "hitRows": 1,
+      "issueCount": 1,
+      "changedCells": 0,
+      "removedRows": 1,
+      "markedRows": 0,
+      "index": 8,
+      "status": "EXPECTED",
+      "durationMs": null
+    }
+  ],
+  "countingNotes": [
+    "inputRows excludes the header; outputRows includes retained flagged records.",
+    "inputRows = outputRows + finalRemovedRows; outputRows = validOutputRows + flaggedOutputRows.",
+    "Each removed source record has exactly one final removal attribution.",
+    "Per-rule hitRows may overlap; do not sum them into unique row counts.",
+    "missingFilledCells/typeConversionFailedCells count rule x source-record x field processing events.",
+    "This is an expected design report, not an executed V3 benchmark or job result."
+  ]
+}

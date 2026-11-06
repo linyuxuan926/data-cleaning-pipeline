@@ -1,0 +1,31 @@
+{
+  "baseUrl": "http://localhost:8088",
+  "checks": [
+    {
+      "taskId": "d1bb4501-6f4a-4655-be4c-1f99b155dd4f",
+      "attemptId": "06a6224a-fd54-4104-9d34-3c88ced4e135",
+      "engineVersion": "v3-sequential",
+      "resultSha256": "d08e7892f726ed585bfdb7eddc53c1d41eb238fd1b24e43c5f4b7a1f05e7fd83",
+      "reportUnchanged": true,
+      "originalAccountWorks": true
+    },
+    {
+      "taskId": "d00dada4-08c6-4fff-b75c-24b1d41412ba",
+      "attemptId": "d88cde61-5faa-4a72-a7cb-9152f702cf88",
+      "engineVersion": "v3-sequential",
+      "resultSha256": "d08e7892f726ed585bfdb7eddc53c1d41eb238fd1b24e43c5f4b7a1f05e7fd83",
+      "reportUnchanged": true,
+      "originalAccountWorks": true
+    },
+    {
+      "taskId": "7237b7ac-376f-4872-ac6b-28d58ba92e17",
+      "attemptId": "142be180-08ea-4cd4-af17-ecc2a5d3b274",
+      "engineVersion": "v3-sequential",
+      "resultSha256": "d08e7892f726ed585bfdb7eddc53c1d41eb238fd1b24e43c5f4b7a1f05e7fd83",
+      "reportUnchanged": true,
+      "originalAccountWorks": true
+    }
+  ],
+  "retentionEnabled": false,
+  "includeExisting": false
+}

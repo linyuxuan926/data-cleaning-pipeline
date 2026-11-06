@@ -1,0 +1,17 @@
+ALTER TABLE users ADD COLUMN role VARCHAR(10) NOT NULL DEFAULT 'USER';
+ALTER TABLE users ADD COLUMN enabled BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE files ADD COLUMN upload_id VARCHAR(36);
+UPDATE files SET upload_id=UUID();
+ALTER TABLE files MODIFY COLUMN upload_id VARCHAR(36) NOT NULL;
+CREATE UNIQUE INDEX files_upload_id_idx ON files(upload_id);
+ALTER TABLE files ADD COLUMN expected_sha256 VARCHAR(64);
+ALTER TABLE files ADD COLUMN sha256 VARCHAR(64);
+ALTER TABLE files ADD COLUMN parse_status VARCHAR(20) NOT NULL DEFAULT 'UNPARSED';
+ALTER TABLE files ADD COLUMN parse_error VARCHAR(2000);
+ALTER TABLE files ADD COLUMN parse_options_json TEXT;
+ALTER TABLE files ADD COLUMN fields_json MEDIUMTEXT;
+ALTER TABLE tasks ADD COLUMN rules_snapshot MEDIUMTEXT;
+ALTER TABLE tasks ADD COLUMN input_snapshot MEDIUMTEXT;
+ALTER TABLE tasks ADD COLUMN limits_snapshot TEXT;
+CREATE TABLE system_settings (id INT PRIMARY KEY,settings_json TEXT NOT NULL,updated_at TIMESTAMP(6) NOT NULL);
+INSERT INTO system_settings(id,settings_json,updated_at) VALUES(1,'{"maxFileBytes":104857600,"maxRows":500000,"maxColumns":200,"maxCells":5000000,"maxExcelExpandedBytes":536870912,"previewRows":100,"maxActivePerUser":3,"maxActiveGlobal":20,"submissionsPerMinute":10}',CURRENT_TIMESTAMP);

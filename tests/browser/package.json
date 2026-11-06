@@ -1,0 +1,17 @@
+{
+  "name": "data-cleaning-pipeline-browser-tests",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node smoke.mjs && node expanded.mjs && node browser-v3.mjs && node upload-resume.mjs && node disk-v3.mjs",
+    "test:smoke": "node smoke.mjs",
+    "test:expanded": "node expanded.mjs",
+    "test:v3": "node browser-v3.mjs",
+    "test:resume": "node upload-resume.mjs",
+    "test:disk": "node disk-v3.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

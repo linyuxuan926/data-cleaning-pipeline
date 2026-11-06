@@ -1,0 +1,355 @@
+{
+  "project": "data-cleaning-pipeline-v3-next",
+  "baseUrl": "http://localhost:8089",
+  "dockerLogicalCpus": 32,
+  "dockerMemoryBytes": 8155533312,
+  "measurements": [
+    {
+      "combinedPeakRssBytes": 220995584,
+      "parentRssAtPeak": 55193600,
+      "childrenRssAtPeak": 165801984,
+      "scratchPeakBytes": 6095370,
+      "sampleCount": 55,
+      "samplingSeconds": 0.2,
+      "workload": "row",
+      "rows": 10000,
+      "columns": 5,
+      "concurrentTasks": 1,
+      "inputBytes": 323800,
+      "outputRows": 10000,
+      "outputBytes": 543954,
+      "dirtyIssueCount": 910,
+      "dirtyBytes": 267478,
+      "taskId": "f24defff-2113-40bc-90ad-d3d3b0c5eb6c",
+      "attemptId": "73fabc12-ce0b-4ede-b422-594b3e8d0798",
+      "batchRows": 127,
+      "maxScratchBytes": 1073741824,
+      "wallSecondsIncludingQueue": 11.266,
+      "engineSeconds": 9.472,
+      "engineScratchPeakBytes": 6087456,
+      "ruleStages": [
+        {
+          "id": "trim-9178aa",
+          "type": "trim",
+          "durationMs": 1397,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "replace-2ca51d",
+          "type": "replace",
+          "durationMs": 1412,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "cast-0ba6d0",
+          "type": "cast",
+          "durationMs": 1508,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "required-161306",
+          "type": "required",
+          "durationMs": 1471,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "fill_null-0da115",
+          "type": "fill_null",
+          "durationMs": 1435,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        }
+      ],
+      "allOutputRowsChecked": true
+    },
+    {
+      "combinedPeakRssBytes": 223129600,
+      "parentRssAtPeak": 55193600,
+      "childrenRssAtPeak": 167936000,
+      "scratchPeakBytes": 30359689,
+      "sampleCount": 242,
+      "samplingSeconds": 0.2,
+      "workload": "row",
+      "rows": 50000,
+      "columns": 5,
+      "concurrentTasks": 1,
+      "inputBytes": 1618911,
+      "outputRows": 50000,
+      "outputBytes": 2719017,
+      "dirtyIssueCount": 4546,
+      "dirtyBytes": 1343454,
+      "taskId": "f6c293a5-4f3a-47c3-83c1-b2acd9c18cf7",
+      "attemptId": "55912384-327e-4bd6-8a8f-17ae62170cc1",
+      "batchRows": 127,
+      "maxScratchBytes": 1073741824,
+      "wallSecondsIncludingQueue": 48.953,
+      "engineSeconds": 46.909,
+      "engineScratchPeakBytes": 30351750,
+      "ruleStages": [
+        {
+          "id": "trim-4f511c",
+          "type": "trim",
+          "durationMs": 6898,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "replace-83750d",
+          "type": "replace",
+          "durationMs": 7009,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "cast-12cd92",
+          "type": "cast",
+          "durationMs": 7383,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "required-c5920a",
+          "type": "required",
+          "durationMs": 7576,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "fill_null-f85cd1",
+          "type": "fill_null",
+          "durationMs": 7092,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        }
+      ],
+      "allOutputRowsChecked": true
+    },
+    {
+      "combinedPeakRssBytes": 220598272,
+      "parentRssAtPeak": 55193600,
+      "childrenRssAtPeak": 165404672,
+      "scratchPeakBytes": 12690856,
+      "sampleCount": 121,
+      "samplingSeconds": 0.2,
+      "workload": "global",
+      "rows": 10000,
+      "columns": 5,
+      "concurrentTasks": 1,
+      "inputBytes": 323800,
+      "outputRows": 1000,
+      "outputBytes": 34851,
+      "dirtyIssueCount": 9000,
+      "dirtyBytes": 3286387,
+      "taskId": "7af26916-a927-443b-8537-6385cb76661d",
+      "attemptId": "6d220ec0-dce6-46e9-9a4c-cd3c2142671a",
+      "batchRows": 127,
+      "maxScratchBytes": 1073741824,
+      "wallSecondsIncludingQueue": 24.547,
+      "engineSeconds": 21.512,
+      "engineScratchPeakBytes": 12668684,
+      "ruleStages": [
+        {
+          "id": "trim-8bd8e9",
+          "type": "trim",
+          "durationMs": 1535,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "replace-2d6853",
+          "type": "replace",
+          "durationMs": 1415,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "cast-da8621",
+          "type": "cast",
+          "durationMs": 1434,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "fill_stat-efadf0",
+          "type": "fill_stat",
+          "durationMs": 3238,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "fill_stat-b134a5",
+          "type": "fill_stat",
+          "durationMs": 2756,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "fill_stat-52cb37",
+          "type": "fill_stat",
+          "durationMs": 2662,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "iqr-9d8ec4",
+          "type": "iqr",
+          "durationMs": 1649,
+          "stageRows": {
+            "input": 10000,
+            "output": 10000
+          }
+        },
+        {
+          "id": "deduplicate-036202",
+          "type": "deduplicate",
+          "durationMs": 3160,
+          "stageRows": {
+            "input": 10000,
+            "output": 1000
+          }
+        }
+      ],
+      "allOutputRowsChecked": true
+    },
+    {
+      "combinedPeakRssBytes": 221777920,
+      "parentRssAtPeak": 55193600,
+      "childrenRssAtPeak": 166584320,
+      "scratchPeakBytes": 63610398,
+      "sampleCount": 550,
+      "samplingSeconds": 0.2,
+      "workload": "global",
+      "rows": 50000,
+      "columns": 5,
+      "concurrentTasks": 1,
+      "inputBytes": 1618911,
+      "outputRows": 5000,
+      "outputBytes": 214311,
+      "dirtyIssueCount": 45001,
+      "dirtyBytes": 16510336,
+      "taskId": "4a68346f-3f81-441d-8d93-a80c044d41af",
+      "attemptId": "ae50afb2-272a-4ffe-93d6-d46d8ddd9a03",
+      "batchRows": 127,
+      "maxScratchBytes": 1073741824,
+      "wallSecondsIncludingQueue": 110.657,
+      "engineSeconds": 107.528,
+      "engineScratchPeakBytes": 63588134,
+      "ruleStages": [
+        {
+          "id": "trim-1389af",
+          "type": "trim",
+          "durationMs": 7066,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "replace-415609",
+          "type": "replace",
+          "durationMs": 6869,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "cast-22a4fe",
+          "type": "cast",
+          "durationMs": 7412,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "fill_stat-09fd13",
+          "type": "fill_stat",
+          "durationMs": 16030,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "fill_stat-a269ac",
+          "type": "fill_stat",
+          "durationMs": 14475,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "fill_stat-a554e6",
+          "type": "fill_stat",
+          "durationMs": 13927,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "iqr-990be4",
+          "type": "iqr",
+          "durationMs": 9042,
+          "stageRows": {
+            "input": 50000,
+            "output": 50000
+          }
+        },
+        {
+          "id": "deduplicate-44437b",
+          "type": "deduplicate",
+          "durationMs": 15126,
+          "stageRows": {
+            "input": 50000,
+            "output": 5000
+          }
+        }
+      ],
+      "allOutputRowsChecked": true
+    }
+  ],
+  "note": "RSS is the sum of supervisor and child RSS, shared pages may be counted more than once; 200ms samples may miss sub-sample peaks. This is measured workloads, not a capacity limit.",
+  "hostCpu": "AMD Ryzen 9 7945HX, 16 cores / 32 logical processors",
+  "hostPhysicalMemoryBytes": 16844877824,
+  "python": "3.11.10",
+  "sqlite": "3.40.1"
+}

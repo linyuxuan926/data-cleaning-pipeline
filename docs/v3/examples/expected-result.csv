@@ -1,0 +1,5 @@
+order_id,name,amount,start_at,end_at,state,_quality_valid,_quality_errors
+002,Bob,185.33,2026-11-06T09:00:00Z,2026-11-06T10:00:00Z,OK,true,[]
+001,Alice last,12.00,2026-11-06T09:00:00Z,2026-11-06T10:00:00Z,OK,true,[]
+006,Frank,20.00,2026-11-06T09:00:00Z,2026-11-06T10:00:00Z,BAD,false,"[{""ruleId"":""r07-enum"",""code"":""ENUM_MISMATCH"",""fieldId"":""state""}]"
+007,Grace,40.00,2026-11-06T09:00:00Z,2026-11-06T10:00:00Z,OK,true,[]

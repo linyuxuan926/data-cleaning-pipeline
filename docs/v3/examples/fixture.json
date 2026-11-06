@@ -1,0 +1,53 @@
+{
+  "designExample": true,
+  "executionStatus": "NOT_EXECUTED_BY_V3",
+  "fileId": "d3941503-1b54-4945-bba7-01ea5f4cf467",
+  "parseOptions": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "missingValues": [
+      ""
+    ]
+  },
+  "fieldBindings": {
+    "order_id": "f0",
+    "customer_name": "f1",
+    "amount": "f2",
+    "start_at": "f3",
+    "end_at": "f4",
+    "state": "f5"
+  },
+  "sourceRecordConvention": "1-based logical data record; header excluded; CSV embedded newlines do not create records",
+  "expectedOutputSourceRecordNumbers": [
+    2,
+    5,
+    7,
+    8
+  ],
+  "expectedFinalDispositions": [
+    {
+      "sourceRecordNumber": 3,
+      "ruleId": "r02-cast-amount",
+      "reason": "TYPE_CONVERSION_FAILED",
+      "finalAction": "REMOVED"
+    },
+    {
+      "sourceRecordNumber": 4,
+      "ruleId": "r04-range",
+      "reason": "OUT_OF_RANGE",
+      "finalAction": "REMOVED"
+    },
+    {
+      "sourceRecordNumber": 6,
+      "ruleId": "r06-dates-order",
+      "reason": "FIELD_COMPARISON_FAILED",
+      "finalAction": "REMOVED"
+    },
+    {
+      "sourceRecordNumber": 1,
+      "ruleId": "r08-dedup",
+      "reason": "DUPLICATE",
+      "finalAction": "REMOVED"
+    }
+  ]
+}

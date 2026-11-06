@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 3,
+  "engineVersion": "v3-sequential",
+  "order": "CONFIGURED",
+  "name": "订单清洗示例",
+  "description": "设计样例：严格顺序、全局均值、标记与唯一删除归因",
+  "enabled": true,
+  "logicalFields": [
+    {
+      "id": "order_id",
+      "label": "订单号"
+    },
+    {
+      "id": "customer_name",
+      "label": "客户名"
+    },
+    {
+      "id": "amount",
+      "label": "金额"
+    },
+    {
+      "id": "start_at",
+      "label": "开始时间"
+    },
+    {
+      "id": "end_at",
+      "label": "结束时间"
+    },
+    {
+      "id": "state",
+      "label": "状态"
+    }
+  ],
+  "rules": [
+    {
+      "id": "r01-trim",
+      "type": "trim",
+      "enabled": true,
+      "fieldIds": [
+        "customer_name"
+      ]
+    },
+    {
+      "id": "r02-cast-amount",
+      "type": "cast",
+      "enabled": true,
+      "fieldIds": [
+        "amount"
+      ],
+      "dtype": "decimal",
+      "scale": 2,
+      "onError": "drop",
+      "rounding": "HALF_UP"
+    },
+    {
+      "id": "r03-fill-mean",
+      "type": "fill_stat",
+      "enabled": true,
+      "fieldIds": [
+        "amount"
+      ],
+      "strategy": "mean",
+      "emptyPolicy": "fail",
+      "scale": 2,
+      "rounding": "HALF_UP",
+      "invalidPolicy": "exclude"
+    },
+    {
+      "id": "r04-range",
+      "type": "range",
+      "enabled": true,
+      "fieldId": "amount",
+      "min": "0.00",
+      "max": "200.00",
+      "inclusiveMin": true,
+      "inclusiveMax": true,
+      "onError": "drop"
+    },
+    {
+      "id": "r05-cast-dates",
+      "type": "cast",
+      "enabled": true,
+      "fieldIds": [
+        "start_at",
+        "end_at"
+      ],
+      "dtype": "datetime",
+      "dateFormat": "iso8601",
+      "outputFormat": "iso8601",
+      "onError": "drop"
+    },
+    {
+      "id": "r06-dates-order",
+      "type": "compare_fields",
+      "enabled": true,
+      "leftFieldId": "start_at",
+      "operator": "lte",
+      "rightFieldId": "end_at",
+      "valueType": "datetime",
+      "nullPolicy": "violation",
+      "onError": "drop"
+    },
+    {
+      "id": "r07-enum",
+      "type": "enum",
+      "enabled": true,
+      "fieldId": "state",
+      "values": [
+        {
+          "type": "string",
+          "value": "OK"
+        }
+      ],
+      "onError": "mark"
+    },
+    {
+      "id": "r08-dedup",
+      "type": "deduplicate",
+      "enabled": true,
+      "fieldIds": [
+        "order_id"
+      ],
+      "keep": "last",
+      "nullsEqual": true,
+      "onError": "drop"
+    }
+  ]
+}

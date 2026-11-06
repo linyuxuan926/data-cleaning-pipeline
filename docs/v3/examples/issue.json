@@ -1,0 +1,27 @@
+{
+  "designExample": true,
+  "fileId": "d3941503-1b54-4945-bba7-01ea5f4cf467",
+  "sheetName": null,
+  "parseSnapshotHash": "example-only-not-a-real-digest",
+  "sourceRecordNumber": 7,
+  "recordId": {
+    "fileId": "d3941503-1b54-4945-bba7-01ea5f4cf467",
+    "sheetName": null,
+    "sourceRecordNumber": 7,
+    "parseSnapshotHash": "example-only-not-a-real-digest"
+  },
+  "ruleId": "r07-enum",
+  "rulePosition": 7,
+  "fieldId": "state",
+  "sourceFieldName": "state",
+  "beforeValue": {
+    "type": "string",
+    "value": "BAD"
+  },
+  "errorCode": "ENUM_MISMATCH",
+  "reason": "Value is not in the declared enum",
+  "actionAtRule": "mark",
+  "finalAction": "OUTPUT_FLAGGED",
+  "removedByRuleId": null,
+  "attemptId": "2df53c82-abeb-4219-8fe9-7cd75fd47d01"
+}

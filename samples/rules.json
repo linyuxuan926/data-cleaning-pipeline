@@ -1,0 +1,9 @@
+[
+  {"type":"trim","columns":["name","email"]},
+  {"type":"case","columns":["email"],"mode":"lower"},
+  {"type":"fill_null","columns":["city"],"value":"Unknown"},
+  {"type":"deduplicate","columns":["id"]},
+  {"type":"cast","columns":["age"],"dtype":"integer"},
+  {"type":"range","column":"age","min":0,"max":150},
+  {"type":"regex","column":"email","pattern":"^[^@]+@[^@]+\\.[^@]+$"}
+]
